@@ -22,5 +22,6 @@ public class TestClass extends InstantiateScreens {
     public void testSelectSpaceName(){
         PaginaNuevaScreen paginaNueva = portadaScreen.goToPaginasNuevas();
         paginaNueva.selectOption("Usuario");
+        verify.elementIsDisplayed(PaginaNuevaScreen.SPACE_NAME_DROPDOWN,"Checking Space dropdown to be displayed");
     }
 }

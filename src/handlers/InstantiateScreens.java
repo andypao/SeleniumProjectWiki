@@ -11,10 +11,12 @@ public class InstantiateScreens extends WebCore{
     protected PaginaNuevaScreen paginaNuevaScreen;
     private WebDriver driver;
     private WebDriverHandler driverHandler;
+    protected Verify verify;
 
     public InstantiateScreens(){
         driverHandler =  new WebDriverHandler();
         driver = driverHandler.setUp();
+        verify = new Verify(driver);
     }
 
     @BeforeClass
@@ -24,7 +26,6 @@ public class InstantiateScreens extends WebCore{
     }
 
     private void initiateClasses(){
-
         portadaScreen = new PortadaScreen(driver);
         paginaNuevaScreen = new PaginaNuevaScreen(driver);
     }

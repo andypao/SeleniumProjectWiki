@@ -20,6 +20,7 @@ public class WebCore {
         this.driver = driver;
         dropdown = new Dropdown(driver);
         waitHandler = new WaitHandler(driver);
+        System.out.println("Web core instance");
     }
 
     public void click(String xpath){
@@ -34,6 +35,11 @@ public class WebCore {
         this.driver.findElement(By.xpath(xpath)).sendKeys(value);
     }
 
+    /** This can be used to return false / true along with an assertion
+     *
+     * @param xpath
+     * @return
+     */
     public boolean isElementDisplayed(String xpath){
         try{
             this.driver.findElement(By.xpath(xpath));
@@ -43,5 +49,8 @@ public class WebCore {
         }
     }
 
+    public WebElement getElement(String xpath){
+        return this.driver.findElement(By.xpath(xpath));
+    }
 
 }
